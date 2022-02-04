@@ -1,0 +1,23 @@
+{
+  "name": "zskgraphics",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "canvas-text-wrapper": "^0.10.2",
+    "cropperjs": "^1.5.12",
+    "jimp": "^0.16.1",
+    "lodash": "^4.17.21",
+    "next": "12.0.9",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "8.8.0",
+    "eslint-config-next": "12.0.9"
+  }
+}
