@@ -1,7 +1,9 @@
 import styles from '../styles/Home.module.css'
+import Image from 'next/image'
+import Logo from '/public/logo.png'
 import {createRef, useEffect, useRef, useState} from 'react'
 import genPreview from '/libs/canvas'
-import lodash, { create, values } from "lodash";
+import lodash from "lodash";
 import Cropper from 'cropperjs'
 
 export default function Home() {
@@ -18,12 +20,17 @@ export default function Home() {
         }
     )
     const fontText = createRef(null)
-
     genPreview(canRef,'simpleimg','/photos/ru.jpg',text, font,true)
+
+    const myLoader = ({src}) => {
+        return `${src}`
+      }
     return(
         <div className={styles.container}>
             <div className={styles.navbar}>
-                 <img className={styles.logo} src='/logo.png'/>
+                <div className={styles.logo}>
+                 <Image className={styles.logo} layout="intrinsic" src={Logo}/>
+                </div>
             </div>
             <div className={styles.content}>
                 <div className={styles.left_menu}>
@@ -44,7 +51,9 @@ export default function Home() {
                 </div>
             </div>
             <footer className={styles.footer}>
-                    <img src='https://avatars.githubusercontent.com/u/62724833?s=400&u=1db185950d9f89f66bbffc0671163cf8269bb153&v=4'/>
+                <div className={styles.github}>
+                    <Image loader={myLoader} layout="responsive" width={100} height={100} src='https://avatars.githubusercontent.com/u/62724833?s=400&u=1db185950d9f89f66bbffc0671163cf8269bb153&v=4'/>
+                </div>
                     <a href='https://github.com/BoberITman'>Made by BoberITman</a>
             </footer>
         </div>

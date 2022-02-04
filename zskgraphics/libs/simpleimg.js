@@ -2,7 +2,7 @@ import txtlib from '/libs/text'
 const  simpleimg = (canvas,context,text,fontsize,underline,photosrc) => {
      //Layout
     const layoutimg = new Image();
-    layoutimg.src = '/simple2.png'
+    layoutimg.src = '/layout/simple2.png'
     layoutimg.onload = () =>{
       context.drawImage(layoutimg,0,0,canvas.height,canvas.width)
       //Text
