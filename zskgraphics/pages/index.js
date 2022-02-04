@@ -9,6 +9,7 @@ import Cropper from 'cropperjs'
 export default function Home() {
     const [text, setText] = useState("Podaj tekst")
     const [font, setFont] = useState(96)
+    const [underline, setUnderline] = useState(true)
     let canRef = useRef(null)
     const textChange = 
         lodash.debounce((event) =>{
@@ -19,8 +20,11 @@ export default function Home() {
         setFont(Number(event.target.value))
         }
     )
-    const fontText = createRef(null)
-    genPreview(canRef,'simpleimg','/photos/ru.jpg',text, font,true)
+    const underlineChange = lodash.debounce((event) =>
+    {
+        setUnderline(!underline)
+    })
+    genPreview(canRef,'simpleimg','/photos/ru.jpg',text, font,underline)
 
     const myLoader = ({src}) => {
         return `${src}`
@@ -40,8 +44,12 @@ export default function Home() {
                     </div>
                     <div className= {styles.font_input}>
                     <h3>Wielkość czcionki</h3>
-                    <p ref={fontText}>Śmieszne</p>
-                    <input onChange={fontChange} name="font" type="range" min='10'  max='144'/>
+                    <p>{font} px</p>
+                    <input onChange={fontChange} name="font" type="range" min='60'  max='150'/>
+                    <div className={styles.underline}>
+                        <p>Podkreślenie</p>
+                        <input onChange={underlineChange} type='checkbox' checked/>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.art}>
@@ -57,5 +65,6 @@ export default function Home() {
                     <a href='https://github.com/BoberITman'>Made by BoberITman</a>
             </footer>
         </div>
+
     )
 }
