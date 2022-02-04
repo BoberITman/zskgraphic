@@ -1,6 +1,6 @@
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
-import Logo from '../public/logo.png'
+import Logo from './static/logo.png'
 import {createRef, useEffect, useRef, useState} from 'react'
 import genPreview from '/libs/canvas'
 import lodash from "lodash";
