@@ -6,6 +6,8 @@ body {
   color: #2e2e2e;
   padding: 0;
   margin: 0;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 a {
@@ -15,4 +17,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }

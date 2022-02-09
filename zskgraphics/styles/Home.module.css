@@ -1,11 +1,39 @@
 .navbar{
   width: 100%;
-  background-color: #003459;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0D4151;
+  position:fixed;
 }
 
 .logo{
+  width: 15%;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.github{
+  margin-right: 1rem;
   margin: 0.5rem;
-  width: 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #3d3d3d;
+}
+.github a{
+  
+  color: #FFFF;
+}
+
+.github_photo{
+  width: 2.5rem;
+  margin-right: 1rem;
+}
+
+.github_photo img{
+  border-radius: 50%;
 }
 
 .container {
@@ -19,12 +47,7 @@
 .content{
   display: flex;
   justify-content: space-between;
-}
-@media (max-width:800px) {
-  .content{
-    display: flex;
-    flex-direction: column;
-  }
+  margin-top: 3rem;
 }
 
 .left_menu{
@@ -46,12 +69,18 @@
   width:60%;
   border: transparent;
   resize: none;
+  border-radius: 0%;
 }
 .font_input{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+.font_slider{
+  
+}
+
 .font_input>p{
   margin-top: 0;
   margin-bottom: 1rem;
@@ -82,24 +111,52 @@
   width: 100%;
 }
 
-.photos{
+.photos_div{
   flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.footer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  color: #3d3d3d;
+.photos_div{
+  width: 100%;
   margin: 1rem;
 }
 
-.github{
-  width: 2.5rem;
-  margin-right: 1rem;
+.image_search{
+  margin-bottom: 1rem;
+  border: solid #3d3d3d 2px;
+  background-color: #f5f5f5;
 }
 
-.footer img{
-  border-radius: 50%;
+.photos{
+  display: flex;
+  scroll-snap-align: y;
+  flex-direction: column;
+  align-items: center;
+  border: solid #3d3d3d 2px;
+  height: 20rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.photos img{
+  width: 100%;
+}
+.photos img:hover{
+  filter: brightness(50%);
+}
+
+.cropper-div{
+  width:80%
+}
+.cropper{
+  display: block;
+  max-width: 100%;
+}
+
+@media (max-width:800px) {
+  .content{
+    display: flex;
+    flex-direction: column;
+  }
 }

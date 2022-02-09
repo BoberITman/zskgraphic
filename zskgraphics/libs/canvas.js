@@ -1,7 +1,7 @@
   
   import simpleimg from '/libs/simpleimg'
   import {useEffect} from 'react'
-  const getPreview = (canRef,layout,photosrc,text,fontsize, underline) => {
+  const getPreview = (canRef,layout,photosrc,text,fontsize, underline, photosize) => {
     //Context
   useEffect(()=>{
   const canvas = canRef.current;
@@ -12,7 +12,7 @@
         case 'simple':
             break;
         case 'simpleimg':
-            simpleimg(canvas,context,text,fontsize,underline,photosrc)
+            simpleimg(canvas,context,layout,text,fontsize,underline,photosrc,photosize)
             break;
         default:
             context.fillText('Fattal Error')
